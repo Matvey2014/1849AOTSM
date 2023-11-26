@@ -82,8 +82,8 @@ set_politics = {
 set_popularities = {
 	democratic = 5
 	socialism = 5
-	reactionist = 5
-	authoritarian = 85
+	reactionist = 20
+	authoritarian = 70
 }
 add_ideas = {
 	ABS_Growing_unrest
@@ -108,3 +108,9 @@ recruit_character = ABS_Darge_Sahle_Selassie
 recruit_character = ABS_Wube_Haile_Maryam_of_Semien
 recruit_character = ABS_Charles_Johnston
 recruit_character = ABS_Haile_Malakot
+recruit_character = ABS_Tekle_Giyorgis
+recruit_character = ABS_Samora_Tadesse
+recruit_character = ABS_Mulugeta_Kello
+recruit_character = ABS_Hayelom_Mekonnen
+recruit_character = ABS_Tsadkan_Negussie
+recruit_character = ABS_Eduard_Rüppell

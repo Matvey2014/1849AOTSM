@@ -45,6 +45,53 @@ characters = {
 	       logistics_skill = 2
 		   legacy_id=9999
 		}
+		advisor={	
+			slot = high_command
+			idea_token = Darge_Sahle_Selassie
+			ledger = army
+			allowed = {
+				original_tag = ABS
+			}
+			traits = {
+				army_logistics_1
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 100
+			}
+		}
+	}
+	ABS_Tekle_Giyorgis  = {
+		name = ABS_Tekle_Giyorgis
+		portraits = {
+			army = {
+				large = "gfx/leaders/ABS/Portrait_Tekle_Giyorgis.dds"
+			}
+		}
+		field_marshal = {
+	       traits = { offensive_doctrine trickster career_officer }
+    	   skill = 3
+	       attack_skill = 3
+	       defense_skill = 3
+	       planning_skill = 2
+	       logistics_skill = 2
+		   legacy_id=9999
+		}
+		advisor={	
+			slot = high_command
+			idea_token = Tekle_Giyorgis
+			ledger = army
+			allowed = {
+				original_tag = ABS
+			}
+			traits = {
+				army_artillery_1
+			}
+			cost = 200
+			ai_will_do = {
+				factor = 100
+			}
+		}
 	}
 	ABS_Ali_II_of_Yejju  = {
 		name = ABS_Ali_II_of_Yejju
@@ -131,7 +178,8 @@ characters = {
 			}
 			available  = {
 				OR = { 
-					has_government = democratic  	
+					has_government = democratic  
+					has_completed_focus = ABS_Connections_abroad	
 				}
 			}
 			traits = {
@@ -152,7 +200,7 @@ characters = {
 		}
 		advisor={
 			slot = political_advisor
-			idea_token = Haile_Malakot0
+			idea_token = Haile_Malakot
 			allowed = {
 				original_tag = ABS
 			}
@@ -161,6 +209,101 @@ characters = {
 					has_completed_focus = ABS_Strengthen_the_influence_of_religion
 					has_completed_focus = ABS_Promotion_of_religious_values
 				}
+			}
+			traits = {
+				backroom_backstabber
+			}
+			cost = 200
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ABS_Samora_Tadesse  = {
+		name = ABS_Samora_Tadesse
+		portraits = {
+			army = {
+				large = "gfx/leaders/ABS/Portrait_Samora_Tadesse.dds"
+			}
+		}
+		corps_commander = {
+	       traits = { trait_mountaineer infantry_leader }
+    	   skill = 2
+	       attack_skill = 1
+	       defense_skill = 1
+	       planning_skill = 2
+	       logistics_skill = 1
+		   legacy_id=10000
+		}
+	}
+	ABS_Mulugeta_Kello  = {
+		name = ABS_Mulugeta_Kello
+		portraits = {
+			army = {
+				large = "gfx/leaders/ABS/Portrait_Mulugeta_Kello.dds"
+			}
+		}
+		corps_commander = {
+	       traits = { old_guard organisational_leader }
+    	   skill = 2
+	       attack_skill = 2
+	       defense_skill = 2
+	       planning_skill = 1
+	       logistics_skill = 2
+		   legacy_id=10000
+		}
+	}
+	ABS_Hayelom_Mekonnen  = {
+		name = ABS_Hayelom_Mekonnen
+		portraits = {
+			army = {
+				large = "gfx/leaders/ABS/Portrait_Hayelom_Mekonnen.dds"
+			}
+		}
+		corps_commander = {
+	       traits = { trait_mountaineer }
+    	   skill = 1
+	       attack_skill = 1
+	       defense_skill = 1
+	       planning_skill = 1
+	       logistics_skill = 2
+		   legacy_id=10000
+		}
+	}
+	ABS_Tsadkan_Negussie  = {
+		name = ABS_Tsadkan_Negussie
+		portraits = {
+			army = {
+				large = "gfx/leaders/ABS/Portrait_Tsadkan_Negussie.dds"
+			}
+		}
+		corps_commander = {
+	       traits = {  }
+    	   skill = 1
+	       attack_skill = 1
+	       defense_skill = 1
+	       planning_skill = 1
+	       logistics_skill = 1
+		   legacy_id=10000
+		}
+	}
+	ABS_Eduard_Rüppell = {
+		name = ABS_Eduard_Rüppell
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ABS/Portrait_Eduard_Rüppell.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = Eduard_Rüppell
+			allowed = {
+				original_tag = ABS
+			}
+			available  = {
+				hidden_effect = {
+			        has_global_flag = ABS_abs_event9
+		        }
 			}
 			traits = {
 				backroom_backstabber

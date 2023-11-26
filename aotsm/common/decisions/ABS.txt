@@ -140,6 +140,7 @@ ABS_Grain_Bank = {
 		available = {
             NOT = {
                 has_idea = ABS_Green_Inflation
+				has_idea = ABS_Unstable_power
             }
 		}
 
@@ -154,39 +155,14 @@ ABS_Grain_Bank = {
 
         remove_effect = {
             hidden_effect = {
-                if = {
-				    limit = {
-                        has_country_flag = ABS_inf2
-                        NOT = {
-                            has_country_flag = ABS_inf1
-                            has_country_flag = ABS_inf3
-                        }
-                    clr_country_flag = ABS_inf2
-                    set_country_flag = ABS_inf3
-                    country_event = abs_event.13
-				    }     
-			    }
-                if = {
-				    limit = {
-                        has_country_flag = ABS_inf1
-                        NOT = {
-                            has_country_flag = ABS_inf2
-                            has_country_flag = ABS_inf3
-                        }
-				    }
-                    clr_country_flag = ABS_inf1
-                    set_country_flag = ABS_inf2    
-			    }
-                if = {
-				    limit = {
-                        NOT = {
-                            has_country_flag = ABS_inf3
-                            has_country_flag = ABS_inf2
-                            has_country_flag = ABS_inf1
-                        }
-				    }  
-                    set_country_flag = ABS_inf1   
-			    }
+				random_list = {
+                    25 = {
+						country_event = abs_event.13
+					}
+					75 = {
+
+					}
+				}
             }
 		}
 
@@ -200,7 +176,10 @@ ABS_Grain_Bank = {
 		icon = GFX_decision_generic_operation
 
 		available = {
-            
+            NOT = {
+                has_idea = ABS_Green_Inflation
+				has_idea = ABS_Unstable_power
+            }
 		}
 
 		days_remove = 90
@@ -210,6 +189,234 @@ ABS_Grain_Bank = {
 		modifier = {     
 			stability_factor = 0.05
 			monthly_population = 0.20
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}
+
+ABS_Abyssinian_Diplomacy = {
+
+	ABS_To_attack_the_Roman_influence = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+            NOT = {
+				has_idea = ABS_Complete_dependence_on_Romea
+            }
+		}
+
+		days_remove = 90
+
+        cost = 150
+
+		remove_effect = {     
+		if = {
+			limit = {
+				has_idea = ABS_Partial_dependence_on_France
+			}
+			swap_ideas = {
+				remove_idea = ABS_Partial_dependence_on_France
+				add_idea = ABS_Complete_dependence_on_France
+			}
+		}
+		if = {
+			limit = {
+				has_idea = ABS_Strong_French_influence
+			}
+			swap_ideas = {
+				remove_idea = ABS_Strong_French_influence
+				add_idea = ABS_Partial_dependence_on_France
+			}
+		}
+		if = {
+			limit = {
+				has_idea = ABS_Moderate_influence_of_France
+			}
+			swap_ideas = {
+				remove_idea = ABS_Moderate_influence_of_France
+				add_idea = ABS_Strong_French_influence
+			}
+		}
+        if = {
+			limit = {
+				has_idea = ABS_Weak_influence_of_France
+			}
+			swap_ideas = {
+				remove_idea = ABS_Weak_influence_of_France
+				add_idea = ABS_Moderate_influence_of_France
+			}
+		}
+        if = {
+			limit = {
+				has_idea = ABS_Weak_influence_of_Romea
+			}
+			swap_ideas = {
+				remove_idea = ABS_Weak_influence_of_Romea
+				add_idea = ABS_Weak_influence_of_France
+			}
+		}
+		if = {
+			limit = {
+				has_idea = ABS_Unstable_independence
+			}
+			swap_ideas = {
+				remove_idea = ABS_Unstable_independence
+				add_idea = ABS_Weak_influence_of_France
+			}
+		}
+        if = {
+			limit = {
+				has_idea = ABS_Moderate_influence_of_Romea
+			}
+			swap_ideas = {
+				remove_idea = ABS_Moderate_influence_of_Romea
+				add_idea = ABS_Weak_influence_of_Romea
+			}
+		}
+        if = {
+			limit = {
+				has_idea = ABS_Strong_influence_of_Romea
+			}   
+			swap_ideas = {
+				remove_idea = ABS_Strong_influence_of_Romea
+				add_idea = ABS_Moderate_influence_of_Romea
+			}
+		}
+        if = {
+			limit = {
+                has_idea = ABS_Partial_dependence_on_Romea
+			}
+            swap_ideas = {
+				remove_idea = ABS_Partial_dependence_on_Romea
+				add_idea = ABS_Strong_influence_of_Romea
+			}
+		}
+        if = {
+			limit = {
+                has_idea = ABS_Complete_dependence_on_Romea
+			}
+            swap_ideas = {
+				remove_idea = ABS_Complete_dependence_on_Romea
+				add_idea = ABS_Partial_dependence_on_Romea
+			}
+		}
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	ABS_Attacking_French_influence = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+            NOT = {
+				has_idea = ABS_Complete_dependence_on_France
+            }
+		}
+
+		days_remove = 90
+
+        cost = 150
+
+		remove_effect
+		 = {     
+		if = {
+			limit = {
+				has_idea = ABS_Partial_dependence_on_Romea
+			}
+			swap_ideas = {
+				remove_idea = ABS_Partial_dependence_on_Romea
+				add_idea = ABS_Complete_dependence_on_Romea
+			}
+		}
+		if = {
+			limit = {
+				has_idea = ABS_Strong_influence_of_Romea
+			}
+			swap_ideas = {
+				remove_idea = ABS_Strong_influence_of_Romea
+				add_idea = ABS_Partial_dependence_on_Romea
+			}
+		}
+		if = {
+			limit = {
+				has_idea = ABS_Moderate_influence_of_Romea
+			}
+			swap_ideas = {
+				remove_idea = ABS_Moderate_influence_of_Romea
+				add_idea = ABS_Strong_influence_of_Romea
+			}
+		}
+        if = {
+			limit = {
+				has_idea = ABS_Weak_influence_of_Romea
+			}
+			swap_ideas = {
+				remove_idea = ABS_Weak_influence_of_Romea
+				add_idea = ABS_Moderate_influence_of_Romea
+			}
+		}
+        if = {
+			limit = {
+				has_idea = ABS_Weak_influence_of_France
+			}
+			swap_ideas = {
+				remove_idea = ABS_Weak_influence_of_France
+				add_idea = ABS_Weak_influence_of_Romea
+			}
+		}
+		if = {
+			limit = {
+				has_idea = ABS_Unstable_independence
+			}
+			swap_ideas = {
+				remove_idea = ABS_Unstable_independence
+				add_idea = ABS_Weak_influence_of_Romea
+			}
+		}
+        if = {
+			limit = {
+				has_idea = ABS_Moderate_influence_of_France
+			}
+			swap_ideas = {
+				remove_idea = ABS_Moderate_influence_of_France
+				add_idea = ABS_Weak_influence_of_France
+			}
+		}
+        if = {
+			limit = {
+				has_idea = ABS_Strong_French_influence
+			}   
+			swap_ideas = {
+				remove_idea = ABS_Strong_French_influence
+				add_idea = ABS_Moderate_influence_of_France
+			}
+		}
+        if = {
+			limit = {
+                has_idea = ABS_Partial_dependence_on_France
+			}
+            swap_ideas = {
+				remove_idea = ABS_Partial_dependence_on_France
+				add_idea = ABS_Strong_French_influence
+			}
+		}
+        if = {
+			limit = {
+                has_idea = ABS_Complete_dependence_on_France
+			}
+            swap_ideas = {
+				remove_idea = ABS_Complete_dependence_on_France
+				add_idea = ABS_Partial_dependence_on_France
+			}
+		}
 		}
 
 		ai_will_do = {
